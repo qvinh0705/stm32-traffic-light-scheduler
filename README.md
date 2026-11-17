@@ -1,6 +1,6 @@
 # Đèn giao thông 2 tuyến trên XNUCLEO-F103RB
 
-BTL môn Vi xử lý – Vi điều khiển (CO3009)
+BTL môn Vi xử lý – Vi điều khiển (CO3009), Trường Đại học Bách Khoa – ĐHQG TP.HCM.
 
 Hệ thống đèn giao thông cho ngã tư 2 tuyến, gồm 3 chế độ Tự động, Bằng tay, Chỉnh thời gian, hiển thị nhiệt độ và độ ẩm (DHT20) trên LCD. Toàn bộ chạy trên scheduler O(1).
 
@@ -32,7 +32,7 @@ btl.ioc
 
 1. Clone repo:
    ```bash
-git clone https://github.com/qvinh0705/stm32-traffic-light-scheduler.git
+   git clone https://github.com/qvinh0705/stm32-traffic-light-scheduler.git
    ```
 2. Mở STM32CubeIDE, chọn **File → Import → Existing Projects into Workspace**, trỏ tới thư mục repo.
 3. Build: `Ctrl + B`.
@@ -55,4 +55,4 @@ Khi chỉnh thời gian, cả 2 tuyến chuyển Đỏ. Giá trị chỉ đượ
 
 ## Bản nộp
 
-Tag `v1.0-final` – commit `<hash>`.
+Mã nguồn nộp bài: tag `v1.0-final` trên nhánh `main`.

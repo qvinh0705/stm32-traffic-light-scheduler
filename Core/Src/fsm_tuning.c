@@ -21,17 +21,17 @@ void fsm_tuning_run(void) {
         error = 0;
     }
     if (button_is_pressed(BTN_INC) || button_is_long_pressed(BTN_INC)) {
-        if (edit[item] < TIME_MAX) edit[item]++;          // chặn trên
+        if (edit[item] < TIME_MAX) edit[item]++;
         error = 0;
     }
     if (button_is_pressed(BTN_DEC) || button_is_long_pressed(BTN_DEC)) {
-        if (edit[item] > TIME_MIN) edit[item]--;          // chặn dưới
+        if (edit[item] > TIME_MIN) edit[item]--;
         error = 0;
     }
 }
 
 int fsm_tuning_try_save(void) {
-    if (edit[0] != edit[1] + edit[2]) {   // vi phạm ràng buộc
+    if (edit[0] != edit[1] + edit[2]) {   // ràng buộc Đỏ = Xanh + Vàng
         error = 1;
         return 0;
     }

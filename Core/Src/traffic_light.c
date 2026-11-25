@@ -1,7 +1,7 @@
 #include "main.h"
 #include "traffic_light.h"
 
-// !!! ĐIỀN THEO BẢNG BƯỚC 3.2 !!!  Mỗi dòng là {A, B}. Các số dưới đây chỉ là ví dụ.
+// Tổ hợp tín hiệu {A, B} cho từng màu
 static const uint8_t tl_code[4][2] = {
     [TL_OFF]   = {0, 0},
     [TL_RED]   = {1, 1},

@@ -1,7 +1,7 @@
 #include "main.h"
 #include "button.h"
 
-// SỬA theo kết quả bước 3.3: nhấn thì đọc ra 0 hay 1?
+// Nút nhấn kéo xuống GND: nhấn = 0
 #define BTN_PRESSED   GPIO_PIN_RESET
 #define BTN_RELEASED  GPIO_PIN_SET
 

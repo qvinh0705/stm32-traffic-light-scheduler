@@ -26,7 +26,7 @@ static int duration_s(light_state_t s) {
     return (s == ST_R1_G2 || s == ST_G1_R2) ? time_green : time_amber;
 }
 
-// "Entry action": vào một trạng thái thì bật đèn và đặt timer
+// Vào trạng thái s: bật đèn và đặt timer
 void fsm_auto_enter(light_state_t s) {
     light_state = s;
     light_apply(s);
@@ -46,6 +46,3 @@ void fsm_auto_run(void) {
         break;
     }
 }
-
-
-

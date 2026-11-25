@@ -1,9 +1,9 @@
 #include "main.h"
 #include "lcd.h"
 
-extern I2C_HandleTypeDef hi2c1;          // khai báo trong main.c
+extern I2C_HandleTypeDef hi2c1;
 
-#define LCD_ADDR   (0x21 << 1)           // SỬA theo I2C scan, nhớ << 1
+#define LCD_ADDR   (0x21 << 1)           // địa chỉ 7-bit dịch trái cho HAL
 #define LCD_BL     0x08                  // bật đèn nền
 #define LCD_EN     0x04
 #define LCD_RS     0x01
@@ -22,8 +22,8 @@ static void lcd_cmd (uint8_t c) { lcd_send(c, 0); }
 static void lcd_data(uint8_t d) { lcd_send(d, LCD_RS); }
 
 void lcd_init(void) {
-    HAL_Delay(50);          // chờ LCD khởi động (chỉ chạy 1 lần lúc init nên được phép)
-    lcd_cmd(0x33);          // 2 lệnh này đưa LCD về chế độ 4-bit
+    HAL_Delay(50);          // chờ LCD khởi động
+    lcd_cmd(0x33);          // chuyển sang chế độ 4-bit
     lcd_cmd(0x32);
     lcd_cmd(0x28);          // 4-bit, 2 dòng, font 5x8
     lcd_cmd(0x0C);          // bật màn hình, tắt con trỏ

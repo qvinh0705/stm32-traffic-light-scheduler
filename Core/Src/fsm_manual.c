@@ -8,7 +8,7 @@ void fsm_manual_enter(void) {
 
 void fsm_manual_run(void) {
     if (button_is_pressed(BTN_NEXT)) {
-        light_state = light_next(light_state);   // vẫn theo vòng có Vàng, không nhảy cóc
+        light_state = light_next(light_state);   // luôn đi qua Vàng
         light_apply(light_state);
     }
 }

@@ -69,7 +69,7 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void task_10ms(void) {          // thứ tự quan trọng: cập nhật timer, quét nút, rồi chạy FSM
+void task_10ms(void) {          // cập nhật timer, quét nút rồi mới chạy FSM
     timerRun();
     button_scan();
     fsm_run();
@@ -119,19 +119,15 @@ int main(void)
   MX_TIM2_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
   lcd_init();
-    button_init();
-    fsm_auto_enter(ST_R1_G2);                   // trạng thái khởi động
+  button_init();
+  fsm_auto_enter(ST_R1_G2);
 
-    SCH_Init();
-    SCH_Add_Task(task_10ms,        0,  1);      // 10 ms
-    SCH_Add_Task(display_run,      2,  25);     // 250 ms
-    SCH_Add_Task(task_dht20_start, 10, 200);    // 2 s
-    HAL_TIM_Base_Start_IT(&htim2);
-
-
-
+  SCH_Init();
+  SCH_Add_Task(task_10ms,        0,  1);      // 10 ms
+  SCH_Add_Task(display_run,      2,  25);     // 250 ms
+  SCH_Add_Task(task_dht20_start, 10, 200);    // 2 s
+  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -140,8 +136,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  SCH_Dispatch_Tasks();
+
     /* USER CODE BEGIN 3 */
+    SCH_Dispatch_Tasks();
   }
   /* USER CODE END 3 */
 }

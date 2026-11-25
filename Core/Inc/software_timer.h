@@ -1,7 +1,7 @@
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 
-#define TIMER_NUM  10      // số timer, dư ra để dùng dần
+#define TIMER_NUM  10
 #define TICK_MS    10      // khớp với chu kỳ ngắt TIM2
 
 extern int timer_flag[TIMER_NUM];
